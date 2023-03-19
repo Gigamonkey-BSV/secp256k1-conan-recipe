@@ -13,11 +13,11 @@ class secp256k1Conan(ConanFile):
     version = "0.2.34"
 
     # Optional metadata
-    license = "<Put the package license here>"
-    author = "<Put your name here> <And your email here>"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of {package_name} here>"
-    topics = ("<Put some tag here>", "<here>", "<and here>")
+    license = "MIT"
+    author = ""
+    url = "https://github.com/Gigamonkey-BSV/secp256k1-conan-recipe"
+    description = "Optimized C library for EC operations on curve secp256k1 "
+    topics = ("Ecliptical Curve", "secp256k1")
 
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
