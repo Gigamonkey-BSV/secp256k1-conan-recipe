@@ -5,12 +5,13 @@ from conan import ConanFile
 from conan.tools.gnu import AutotoolsToolchain, Autotools
 from conan.tools.layout import basic_layout
 from conan.tools.apple import fix_apple_shared_install_name
+from conan.tools.scm import Git
 
 from conan.tools.files import get
 
 class secp256k1Conan(ConanFile):
     name = "secp256k1"
-    version = "0.2.34"
+    version = "0.3"
 
     # Optional metadata
     license = "MIT"
@@ -25,8 +26,9 @@ class secp256k1Conan(ConanFile):
     default_options = {"shared": False, "fPIC": True}
 
     def source(self):
-        get(self, "https://github.com/bitcoin-core/secp256k1/archive/refs/heads/master.zip",
-                  strip_root=True)
+        git = Git(self)
+        git.clone(url=self.conan_data["sources"][self.version]['url'], target=".")
+        git.checkout(self.conan_data["sources"][self.version]['commit'])
         
     def config_options(self):
         if self.settings.os == "Windows":

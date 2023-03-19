@@ -1,0 +1,4 @@
+sources:
+  "0.3":
+    url: "https://github.com/bitcoin-core/secp256k1.git"
+    commit: "427bc3cdcfbc74778070494daab1ae5108c71368"
